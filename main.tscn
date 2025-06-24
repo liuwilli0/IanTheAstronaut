@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://dgut3h2sh1xby"]
+
+[ext_resource type="PackedScene" uid="uid://dhkgk5jwk6w8q" path="res://Planet/planet.tscn" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://cqgg220ybqm40" path="res://Enemy/enemy.tscn" id="2_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://bvxmv8e3ap0m0" path="res://Player/player.tscn" id="2_h2yge"]
+[ext_resource type="Script" uid="uid://bl4icmfefriuh" path="res://debug.gd" id="3_h2yge"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Planets" type="Node2D" parent="."]
+
+[node name="Planet1" parent="Planets" instance=ExtResource("1_0xm2m")]
+scale = Vector2(1000, 1000)
+
+[node name="Planet2" parent="Planets" instance=ExtResource("1_0xm2m")]
+position = Vector2(956, -1238)
+scale = Vector2(200, 200)
+
+[node name="Planet3" parent="Planets" instance=ExtResource("1_0xm2m")]
+position = Vector2(955, 348)
+scale = Vector2(300, 300)
+
+[node name="Planet4" parent="Planets" instance=ExtResource("1_0xm2m")]
+position = Vector2(406, -2286)
+scale = Vector2(350, 350)
+
+[node name="Enemy" parent="." instance=ExtResource("2_1bvp3")]
+position = Vector2(1083, -611)
+
+[node name="Player" parent="." instance=ExtResource("2_h2yge")]
+position = Vector2(0, -1500)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+ignore_rotation = false
+zoom = Vector2(0.4, 0.4)
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true
+rotation_smoothing_speed = 2.5
+
+[node name="Debug" type="Node" parent="."]
+process_mode = 3
+script = ExtResource("3_h2yge")

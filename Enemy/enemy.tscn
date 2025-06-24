@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://cqgg220ybqm40"]
+
+[ext_resource type="Script" uid="uid://s2sndhubua1m" path="res://Enemy/enemy.gd" id="1_2pb1h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_px1sc"]
+size = Vector2(128, 128)
+
+[sub_resource type="Gradient" id="Gradient_am0pq"]
+interpolation_mode = 1
+colors = PackedColorArray(0, 0, 0, 1, 0.000113828, 0.000113828, 0.000113828, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_eqilm"]
+gradient = SubResource("Gradient_am0pq")
+width = 128
+height = 128
+
+[node name="Enemy" type="CharacterBody2D"]
+script = ExtResource("1_2pb1h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_px1sc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("GradientTexture2D_eqilm")

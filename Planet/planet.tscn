@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://dhkgk5jwk6w8q"]
+
+[ext_resource type="Script" uid="uid://1acy6t81inj4" path="res://Planet/planet.gd" id="1_06kw6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m2dqj"]
+radius = 500.0
+
+[sub_resource type="Gradient" id="Gradient_0v15i"]
+interpolation_mode = 1
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_b00i1"]
+gradient = SubResource("Gradient_0v15i")
+width = 1000
+height = 1000
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[node name="Planet" type="StaticBody2D"]
+script = ExtResource("1_06kw6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.002, 0.002)
+shape = SubResource("CircleShape2D_m2dqj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.002, 0.002)
+texture = SubResource("GradientTexture2D_b00i1")
