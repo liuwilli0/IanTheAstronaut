@@ -1,3 +1,4 @@
+class_name Player
 extends CharacterBody2D
 
 @export var move_speed = 800
@@ -7,9 +8,16 @@ extends CharacterBody2D
 @onready var GravityRayCast = $GravityRayCast
 @onready var MoveRayCast = $MoveRayCast
 @onready var VelocityRayCast = $VelocityRayCast
+@onready var size = $CollisionShape.shape.size
 
 var gravity = Vector2.ZERO
 var move = Vector2.ZERO
+
+func die():
+	get_tree().paused = true;
+
+func enemy_bounce():
+	gravity = -gravity / 2
 
 func handle_input(delta):
 	var direction = Input.get_axis("left", "right")

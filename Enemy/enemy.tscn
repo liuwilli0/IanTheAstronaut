@@ -1,8 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://cqgg220ybqm40"]
+[gd_scene load_steps=6 format=3 uid="uid://cqgg220ybqm40"]
 
 [ext_resource type="Script" uid="uid://s2sndhubua1m" path="res://Enemy/enemy.gd" id="1_2pb1h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_px1sc"]
+size = Vector2(128, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2pb1h"]
 size = Vector2(128, 128)
 
 [sub_resource type="Gradient" id="Gradient_am0pq"]
@@ -15,10 +18,19 @@ width = 128
 height = 128
 
 [node name="Enemy" type="CharacterBody2D"]
+collision_layer = 0
+collision_mask = 2
 script = ExtResource("1_2pb1h")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_px1sc")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("RectangleShape2D_2pb1h")
+
+[node name="Sprite" type="Sprite2D" parent="."]
 texture = SubResource("GradientTexture2D_eqilm")
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]

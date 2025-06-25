@@ -18,12 +18,12 @@ fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.5, 0)
 
 [node name="Planet" type="StaticBody2D"]
+position = Vector2(1, 0)
+collision_layer = 3
 script = ExtResource("1_06kw6")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(0.002, 0.002)
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_m2dqj")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.002, 0.002)
+[node name="Sprite" type="Sprite2D" parent="."]
 texture = SubResource("GradientTexture2D_b00i1")
