@@ -1,44 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://dgut3h2sh1xby"]
+[gd_scene load_steps=4 format=3 uid="uid://dgut3h2sh1xby"]
 
-[ext_resource type="PackedScene" uid="uid://dhkgk5jwk6w8q" path="res://Planet/planet.tscn" id="1_0xm2m"]
-[ext_resource type="PackedScene" uid="uid://cqgg220ybqm40" path="res://Enemy/enemy.tscn" id="2_1bvp3"]
-[ext_resource type="PackedScene" uid="uid://bvxmv8e3ap0m0" path="res://Player/player.tscn" id="2_h2yge"]
-[ext_resource type="Script" uid="uid://bl4icmfefriuh" path="res://debug.gd" id="3_h2yge"]
+[ext_resource type="Script" uid="uid://by3ggypw6vsv1" path="res://main.gd" id="1_h2yge"]
+[ext_resource type="PackedScene" uid="uid://rfinin8evnoa" path="res://Menu/menu.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://bohuvg44b41gk" path="res://Game/game.tscn" id="2_0xm2m"]
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_h2yge")
 
-[node name="Planets" type="Node2D" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Planet1" parent="Planets" instance=ExtResource("1_0xm2m")]
-scale = Vector2(2, 2)
+[node name="Menu" parent="CanvasLayer" instance=ExtResource("1_ig7tw")]
 
-[node name="Enemy" parent="Planets/Planet1" instance=ExtResource("2_1bvp3")]
-top_level = true
-position = Vector2(1257, -639)
-
-[node name="Planet3" parent="Planets" instance=ExtResource("1_0xm2m")]
-position = Vector2(955, 348)
-scale = Vector2(0.8, 0.8)
-
-[node name="Enemy" parent="Planets/Planet3" instance=ExtResource("2_1bvp3")]
-top_level = true
-position = Vector2(1535, 284)
-
-[node name="Planet4" parent="Planets" instance=ExtResource("1_0xm2m")]
-position = Vector2(419, -2270)
-scale = Vector2(0.8, 0.8)
-
-[node name="Player" parent="." instance=ExtResource("2_h2yge")]
-position = Vector2(0, -1500)
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(0, 11)
-ignore_rotation = false
-zoom = Vector2(0.2, 0.2)
-position_smoothing_enabled = true
-rotation_smoothing_enabled = true
-rotation_smoothing_speed = 2.5
-
-[node name="Debug" type="Node" parent="."]
-process_mode = 3
-script = ExtResource("3_h2yge")
+[node name="Game" parent="." instance=ExtResource("2_0xm2m")]
+process_mode = 4
+visible = false

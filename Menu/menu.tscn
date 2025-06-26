@@ -1,0 +1,117 @@
+[gd_scene load_steps=14 format=3 uid="uid://rfinin8evnoa"]
+
+[ext_resource type="Script" uid="uid://dn2wvrf60lfdh" path="res://Menu/menu.gd" id="1_rwxi6"]
+[ext_resource type="Texture2D" uid="uid://bc8rbylgbu025" path="res://Menu/space-split/frame_00_delay-0.1s.png" id="2_0k1h5"]
+[ext_resource type="Texture2D" uid="uid://doa45t4dxc7er" path="res://Menu/space-split/frame_01_delay-0.1s.png" id="3_cotva"]
+[ext_resource type="Texture2D" uid="uid://b7i7gx4jn5107" path="res://Menu/space-split/frame_02_delay-0.1s.png" id="4_2p233"]
+[ext_resource type="Texture2D" uid="uid://dgnv5ckb2mq83" path="res://Menu/space-split/frame_03_delay-0.1s.png" id="5_5s5no"]
+[ext_resource type="Texture2D" uid="uid://bi0nhumhfk6hb" path="res://Menu/space-split/frame_04_delay-0.1s.png" id="6_v3yle"]
+[ext_resource type="Texture2D" uid="uid://dx4lp14nxyfhw" path="res://Menu/space-split/frame_05_delay-0.1s.png" id="7_uu4eq"]
+[ext_resource type="Texture2D" uid="uid://iorw4eja5rl2" path="res://Menu/space-split/frame_06_delay-0.1s.png" id="8_pxa7u"]
+[ext_resource type="Texture2D" uid="uid://bbl34bcxo08ah" path="res://Menu/space-split/frame_07_delay-0.1s.png" id="9_1wnsb"]
+[ext_resource type="Texture2D" uid="uid://bypklgy40qcgv" path="res://Menu/space-split/frame_08_delay-0.1s.png" id="10_oq131"]
+[ext_resource type="Texture2D" uid="uid://dmjguorf63exe" path="res://Menu/space-split/frame_09_delay-0.1s.png" id="11_2hksm"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oj2gx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_0k1h5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_cotva")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_2p233")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_5s5no")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_v3yle")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_uu4eq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_pxa7u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_1wnsb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_oq131")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_2hksm")
+}],
+"loop": true,
+"name": &"Space",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fv5qh"]
+bg_color = Color(0.6, 0.588235, 1, 0.839216)
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rwxi6")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2.5, 2.5)
+sprite_frames = SubResource("SpriteFrames_oj2gx")
+animation = &"Space"
+centered = false
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="UI"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -432.5
+offset_top = 100.0
+offset_right = 432.5
+offset_bottom = 237.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 100
+text = "Ian The Astronaut"
+
+[node name="Button" type="Button" parent="UI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_right = 200.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_fv5qh")
+text = "Play
+"
+
+[connection signal="pressed" from="UI/Button" to="." method="_on_button_pressed"]

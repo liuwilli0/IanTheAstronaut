@@ -1,6 +1,6 @@
 extends Node
 
-@onready var planets = get_tree().current_scene.get_node("Planets").get_children()
+var planets
 
 func get_nearest_planet(position):
 	var nearest_planet
@@ -25,3 +25,6 @@ func get_gravity(position):
 	for planet in planets:
 		gravity += get_planet_gravity(planet, position)
 	return gravity
+
+func _on_planets_ready():
+	planets = $"../Planets".get_children()
