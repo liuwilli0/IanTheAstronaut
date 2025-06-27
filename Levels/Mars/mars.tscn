@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://vjb8cqdrwfeh"]
+[gd_scene load_steps=8 format=3 uid="uid://vjb8cqdrwfeh"]
 
 [ext_resource type="PackedScene" uid="uid://dhkgk5jwk6w8q" path="res://Planet/planet.tscn" id="1_drkna"]
 [ext_resource type="Script" uid="uid://nvyyf8og72on" path="res://Levels/Mars/mars.gd" id="1_kjrtl"]
 [ext_resource type="Texture2D" uid="uid://cw82akyom270a" path="res://Levels/Mars/mars.png" id="2_kjrtl"]
 [ext_resource type="PackedScene" uid="uid://cqgg220ybqm40" path="res://Enemy/enemy.tscn" id="3_v7swb"]
+[ext_resource type="Texture2D" uid="uid://5ss6e8h6wkev" path="res://Levels/Uranus/uranus.png" id="5_v7swb"]
 
 [sub_resource type="Gradient" id="Gradient_kjrtl"]
 offsets = PackedFloat32Array(0.993548, 1)
@@ -37,8 +38,8 @@ scale = Vector2(3, 3)
 density = 2.0
 
 [node name="PlanetSprite" type="Sprite2D" parent="Planet2"]
-scale = Vector2(1.14, 1.14)
-texture = ExtResource("2_kjrtl")
+scale = Vector2(0.98, 0.98)
+texture = ExtResource("5_v7swb")
 
 [node name="Enemy" parent="Planet2" instance=ExtResource("3_v7swb")]
 top_level = true

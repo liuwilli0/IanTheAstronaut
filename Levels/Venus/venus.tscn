@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bryo77v0hrksl"]
+[gd_scene load_steps=6 format=3 uid="uid://bryo77v0hrksl"]
 
 [ext_resource type="Script" uid="uid://bcgfe8kvi5v1n" path="res://Levels/Venus/venus.gd" id="1_p5c5n"]
 [ext_resource type="PackedScene" uid="uid://dhkgk5jwk6w8q" path="res://Planet/planet.tscn" id="2_0j00t"]
 [ext_resource type="PackedScene" uid="uid://cqgg220ybqm40" path="res://Enemy/enemy.tscn" id="3_2rig4"]
 [ext_resource type="Texture2D" uid="uid://cr4hioq61tagm" path="res://Levels/Venus/venus.png" id="4_2773o"]
+[ext_resource type="Texture2D" uid="uid://nriu3voldmjy" path="res://Levels/Neptune/neptune.png" id="5_2773o"]
 
 [node name="Venus" type="Node2D"]
 script = ExtResource("1_p5c5n")
@@ -36,5 +37,5 @@ top_level = true
 position = Vector2(3503, -1063)
 
 [node name="PlanetSprite" type="Sprite2D" parent="Planet2"]
-scale = Vector2(1.17, 1.17)
-texture = ExtResource("4_2773o")
+scale = Vector2(0.65, 0.65)
+texture = ExtResource("5_2773o")

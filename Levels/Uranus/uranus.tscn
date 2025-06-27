@@ -17,5 +17,5 @@ top_level = true
 position = Vector2(1257, -639)
 
 [node name="PlanetSprite" type="Sprite2D" parent="Planet1"]
-scale = Vector2(3, 3)
+scale = Vector2(0.96, 0.96)
 texture = ExtResource("4_5pb44")

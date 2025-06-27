@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bohuvg44b41gk"]
+[gd_scene load_steps=9 format=3 uid="uid://bohuvg44b41gk"]
 
 [ext_resource type="Script" uid="uid://dehxbd7iptogn" path="res://Game/game.gd" id="1_kul4i"]
 [ext_resource type="Texture2D" uid="uid://qv0ddq7gvtdm" path="res://Game/space.jpg" id="3_buohc"]
@@ -7,7 +7,6 @@
 [ext_resource type="Script" uid="uid://bl4icmfefriuh" path="res://Game/debug.gd" id="4_oomkl"]
 [ext_resource type="PackedScene" uid="uid://2be6204y1xyw" path="res://Levels/Mercury/mercury.tscn" id="5_qmv3x"]
 [ext_resource type="PackedScene" uid="uid://vjb8cqdrwfeh" path="res://Levels/Mars/mars.tscn" id="6_oomkl"]
-[ext_resource type="PackedScene" uid="uid://bq5750v7c11x0" path="res://Levels/Uranus/uranus.tscn" id="7_buohc"]
 [ext_resource type="PackedScene" uid="uid://bryo77v0hrksl" path="res://Levels/Venus/venus.tscn" id="8_kul4i"]
 
 [node name="Game" type="Node2D"]
@@ -31,11 +30,6 @@ texture = ExtResource("3_buohc")
 [node name="Mars" parent="Levels" instance=ExtResource("6_oomkl")]
 process_mode = 4
 visible = false
-
-[node name="Uranus" parent="Levels" instance=ExtResource("7_buohc")]
-process_mode = 4
-visible = false
-position = Vector2(-596.686, -122.069)
 
 [node name="Venus" parent="Levels" instance=ExtResource("8_kul4i")]
 process_mode = 4
