@@ -5,16 +5,15 @@ extends CharacterBody2D
 
 @onready var gravity_manager = $"/root/Main/Game/GravityManager"
 @onready var planet = get_parent()
-@onready var player = $"/root/Main/Game/Player"
 
 var gravity = Vector2.ZERO
 var move = Vector2.ZERO
 var direction = 1
 
 func die(): 
-	player.enemy_count -= 1
-	if player.enemy_count <= 0:
-		player.get_parent().complete_level()
+	planet.get_parent().enemy_count -= 1
+	if planet.get_parent().enemy_count <= 0:
+		planet.get_parent().get_parent().get_parent().complete_level()
 	queue_free()
 
 func _physics_process(delta):
@@ -32,7 +31,7 @@ func _physics_process(delta):
 		direction = -direction
 
 func _ready():
-	player.enemy_count += 1
+	planet.get_parent().enemy_count += 1
 
 func _on_hitbox_area_entered(area):
 	var parent = area.get_parent()

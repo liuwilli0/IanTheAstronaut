@@ -1,14 +1,14 @@
 [gd_scene load_steps=10 format=3 uid="uid://bohuvg44b41gk"]
 
-[ext_resource type="PackedScene" uid="uid://dhkgk5jwk6w8q" path="res://Planet/planet.tscn" id="1_jcm6v"]
 [ext_resource type="Script" uid="uid://dehxbd7iptogn" path="res://Game/game.gd" id="1_kul4i"]
-[ext_resource type="PackedScene" uid="uid://cqgg220ybqm40" path="res://Enemy/enemy.tscn" id="2_fwxkx"]
 [ext_resource type="Texture2D" uid="uid://qv0ddq7gvtdm" path="res://Game/space.jpg" id="3_buohc"]
 [ext_resource type="PackedScene" uid="uid://bvxmv8e3ap0m0" path="res://Player/player.tscn" id="3_qmv3x"]
 [ext_resource type="Script" uid="uid://cm5115uqxral7" path="res://Game/gravity_manager.gd" id="4_fwxkx"]
 [ext_resource type="Script" uid="uid://bl4icmfefriuh" path="res://Game/debug.gd" id="4_oomkl"]
-[ext_resource type="Texture2D" uid="uid://bl73lw50h0m2k" path="res://Game/mercury.png" id="5_qmv3x"]
-[ext_resource type="Texture2D" uid="uid://cw82akyom270a" path="res://Game/mars.png" id="6_oomkl"]
+[ext_resource type="PackedScene" uid="uid://2be6204y1xyw" path="res://Levels/Mercury/mercury.tscn" id="5_qmv3x"]
+[ext_resource type="PackedScene" uid="uid://vjb8cqdrwfeh" path="res://Levels/Mars/mars.tscn" id="6_oomkl"]
+[ext_resource type="PackedScene" uid="uid://bq5750v7c11x0" path="res://Levels/Uranus/uranus.tscn" id="7_buohc"]
+[ext_resource type="PackedScene" uid="uid://bryo77v0hrksl" path="res://Levels/Venus/venus.tscn" id="8_kul4i"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_kul4i")
@@ -24,30 +24,23 @@ script = ExtResource("4_fwxkx")
 scale = Vector2(3, 3)
 texture = ExtResource("3_buohc")
 
-[node name="Planets" type="Node2D" parent="."]
+[node name="Levels" type="Node2D" parent="."]
 
-[node name="Planet1" parent="Planets" instance=ExtResource("1_jcm6v")]
-scale = Vector2(2, 2)
+[node name="Mercury" parent="Levels" instance=ExtResource("5_qmv3x")]
 
-[node name="Enemy" parent="Planets/Planet1" instance=ExtResource("2_fwxkx")]
-top_level = true
-position = Vector2(1257, -639)
+[node name="Mars" parent="Levels" instance=ExtResource("6_oomkl")]
+process_mode = 4
+visible = false
 
-[node name="PlanetSprite" type="Sprite2D" parent="Planets/Planet1"]
-scale = Vector2(0.73, 0.73)
-texture = ExtResource("5_qmv3x")
+[node name="Uranus" parent="Levels" instance=ExtResource("7_buohc")]
+process_mode = 4
+visible = false
+position = Vector2(-596.686, -122.069)
 
-[node name="Planet2" parent="Planets" instance=ExtResource("1_jcm6v")]
-position = Vector2(2534, -1812)
-scale = Vector2(0.8, 0.8)
-
-[node name="Enemy" parent="Planets/Planet2" instance=ExtResource("2_fwxkx")]
-top_level = true
-position = Vector2(2912, -2404)
-
-[node name="PlanetSprite" type="Sprite2D" parent="Planets/Planet2"]
-scale = Vector2(1.14, 1.14)
-texture = ExtResource("6_oomkl")
+[node name="Venus" parent="Levels" instance=ExtResource("8_kul4i")]
+process_mode = 4
+visible = false
+position = Vector2(-596.686, -122.069)
 
 [node name="Player" parent="." instance=ExtResource("3_qmv3x")]
 position = Vector2(0, -1500)
@@ -61,6 +54,7 @@ rotation_smoothing_enabled = true
 rotation_smoothing_speed = 2.5
 
 [node name="LevelComplete" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="Label" type="Label" parent="LevelComplete"]
 anchors_preset = 8
@@ -68,13 +62,30 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
+offset_left = -308.0
+offset_top = -155.0
+offset_right = 308.0
+offset_bottom = -45.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 80
 text = "Level Complete!"
+horizontal_alignment = 1
 
-[connection signal="ready" from="Planets" to="GravityManager" method="_on_planets_ready"]
+[node name="Button" type="Button" parent="LevelComplete"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -45.0
+offset_top = 84.5
+offset_right = 45.0
+offset_bottom = 115.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "Next Level
+"
+
+[connection signal="pressed" from="LevelComplete/Button" to="." method="_on_button_pressed"]

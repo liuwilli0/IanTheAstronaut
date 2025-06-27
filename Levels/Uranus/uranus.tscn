@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://bq5750v7c11x0"]
+
+[ext_resource type="Script" uid="uid://c1jdpflwlk71f" path="res://Levels/Uranus/uranus.gd" id="1_5pb44"]
+[ext_resource type="PackedScene" uid="uid://dhkgk5jwk6w8q" path="res://Planet/planet.tscn" id="2_rvjgo"]
+[ext_resource type="PackedScene" uid="uid://cqgg220ybqm40" path="res://Enemy/enemy.tscn" id="3_cb8jb"]
+[ext_resource type="Texture2D" uid="uid://5ss6e8h6wkev" path="res://Levels/Uranus/uranus.png" id="4_5pb44"]
+
+[node name="Uranus" type="Node2D"]
+script = ExtResource("1_5pb44")
+
+[node name="Planet1" parent="." instance=ExtResource("2_rvjgo")]
+scale = Vector2(2, 2)
+density = 3.0
+
+[node name="Enemy" parent="Planet1" instance=ExtResource("3_cb8jb")]
+top_level = true
+position = Vector2(1257, -639)
+
+[node name="PlanetSprite" type="Sprite2D" parent="Planet1"]
+scale = Vector2(3, 3)
+texture = ExtResource("4_5pb44")

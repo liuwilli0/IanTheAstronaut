@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cw82akyom270a"
-path="res://.godot/imported/mars.png-011fc560b85ea0770357fe077d909927.ctex"
+uid="uid://cr4hioq61tagm"
+path="res://.godot/imported/venus.png-2d30e76ece245b501977b14f2309efd1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game/mars.png"
-dest_files=["res://.godot/imported/mars.png-011fc560b85ea0770357fe077d909927.ctex"]
+source_file="res://Levels/Venus/venus.png"
+dest_files=["res://.godot/imported/venus.png-2d30e76ece245b501977b14f2309efd1.ctex"]
 
 [params]
 

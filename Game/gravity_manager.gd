@@ -25,6 +25,3 @@ func get_gravity(position):
 	for planet in planets:
 		gravity += get_planet_gravity(planet, position)
 	return gravity
-
-func _on_planets_ready():
-	planets = $"../Planets".get_children()

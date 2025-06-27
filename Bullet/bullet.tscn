@@ -1,19 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dl1iw4h7nrn5"]
+[gd_scene load_steps=5 format=3 uid="uid://dl1iw4h7nrn5"]
 
 [ext_resource type="Script" uid="uid://5ha2y7q6pe1a" path="res://Bullet/bullet.gd" id="1_2dao8"]
+[ext_resource type="Texture2D" uid="uid://l2mschjkrk3g" path="res://Player/spritesheet.png" id="2_4qwpv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4qwpv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6rx1x"]
-
-[sub_resource type="Gradient" id="Gradient_2dao8"]
-interpolation_mode = 1
-colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_4qwpv"]
-gradient = SubResource("Gradient_2dao8")
-width = 20
-height = 20
 
 [node name="Bullet" type="RigidBody2D"]
 collision_layer = 0
@@ -31,7 +23,10 @@ collision_mask = 3
 shape = SubResource("RectangleShape2D_6rx1x")
 
 [node name="Sprite" type="Sprite2D" parent="."]
-texture = SubResource("GradientTexture2D_4qwpv")
+texture = ExtResource("2_4qwpv")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(0, 200, 64, 48)
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true

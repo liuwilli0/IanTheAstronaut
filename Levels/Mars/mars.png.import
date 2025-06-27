@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5ss6e8h6wkev"
-path="res://.godot/imported/uranus.png-2c791e022f445c136838dbd6757ec18d.ctex"
+uid="uid://cw82akyom270a"
+path="res://.godot/imported/mars.png-4704fcf099ebdcee7ac938eb99f163ae.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game/uranus.png"
-dest_files=["res://.godot/imported/uranus.png-2c791e022f445c136838dbd6757ec18d.ctex"]
+source_file="res://Levels/Mars/mars.png"
+dest_files=["res://.godot/imported/mars.png-4704fcf099ebdcee7ac938eb99f163ae.ctex"]
 
 [params]
 

@@ -23,7 +23,6 @@ extends CharacterBody2D
 var gravity = Vector2.ZERO
 var gravity_strength = 1
 var move = Vector2.ZERO
-var enemy_count = 0
 
 func die():
 	thrust_bar.visible = false
@@ -85,6 +84,9 @@ func handle_movement(delta):
 			animated_sprite.play("Idle")
 		else:
 			animated_sprite.play("Walk", horizontal_velocity * delta * 0.1)
+	
+	if Input.is_action_just_pressed("Reset"):
+		position = spawn_position
 
 func _physics_process(delta):
 	up_direction = gravity_manager.get_up_direction(global_position)
@@ -97,9 +99,6 @@ func _physics_process(delta):
 	move_and_slide()
 	if is_on_floor() or is_on_ceiling():
 		gravity = Vector2.ZERO
-	
-	if Input.is_action_just_pressed("Special"):
-		add_child(Bullet.new())
 	
 	gravity_ray_cast.target_position = gravity
 	move_ray_cast.target_position = move

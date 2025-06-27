@@ -96,6 +96,7 @@ offset_bottom = 237.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 100
 text = "Ian The Astronaut"
+horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="UI"]
 layout_mode = 1

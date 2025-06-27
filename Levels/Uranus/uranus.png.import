@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bl73lw50h0m2k"
-path="res://.godot/imported/mercury.png-0d1b06a861c762f7e8c27e625ffe89c4.ctex"
+uid="uid://5ss6e8h6wkev"
+path="res://.godot/imported/uranus.png-2138caac857d5bfd16eeaef0925a93f1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game/mercury.png"
-dest_files=["res://.godot/imported/mercury.png-0d1b06a861c762f7e8c27e625ffe89c4.ctex"]
+source_file="res://Levels/Uranus/uranus.png"
+dest_files=["res://.godot/imported/uranus.png-2138caac857d5bfd16eeaef0925a93f1.ctex"]
 
 [params]
 
