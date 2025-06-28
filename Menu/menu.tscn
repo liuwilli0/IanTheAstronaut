@@ -71,7 +71,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
-scale = Vector2(2.5, 2.5)
+scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_oj2gx")
 animation = &"Space"
 centered = false

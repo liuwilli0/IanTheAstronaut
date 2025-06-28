@@ -11,6 +11,8 @@ func complete_level():
 	if level >= len(levels) - 1:
 		level_complete.get_child(1).visible = false
 		level_complete.get_child(0).text = "You Win!"
+		await get_tree().create_timer(3).timeout
+		level_complete.visible = false
 
 func _ready():
 	gravity_manager.planets = levels[0].get_children()
